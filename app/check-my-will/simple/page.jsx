@@ -1,6 +1,6 @@
 "use client"
 
-import type React from "react"
+
 import { useEffect, useState, useCallback } from "react"
 import { Button } from "@/components/ui/button"
 import { useRouter } from "next/navigation"
@@ -14,15 +14,7 @@ import { Progress } from "@/components/ui/progress"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { DotBackground } from "@/components/animateddots"
 
-interface Will {
-  beneficiary: string
-  amount: bigint
-  lastPingTime: bigint
-  claimWaitTime: bigint
-  description: string
-  isClaimed: boolean
-  creationTime: bigint
-}
+
 
 const CheckMyWill = () => {
   const [willDetails, setWillDetails] = useState<Will | null>(null)
@@ -55,7 +47,7 @@ const CheckMyWill = () => {
     }
   }, [account, getNormalWill])
 
-  const checkWithdrawalEligibility = (creationTime: bigint) => {
+  const checkWithdrawalEligibility = (creationTime) => {
     const oneYearInSeconds = BigInt(365 * 24 * 60 * 60)
     const now = BigInt(Math.floor(Date.now() / 1000))
     setWithdrawalAvailable(now >= creationTime + oneYearInSeconds)
@@ -123,7 +115,7 @@ const CheckMyWill = () => {
     return () => clearInterval(interval)
   }, [willDetails?.lastPingTime, willDetails?.claimWaitTime])
 
-  const handleDeposit = async (e: React.FormEvent) => {
+  const handleDeposit = async (e) => {
     e.preventDefault()
     if (!depositAmount || parseFloat(depositAmount) <= 0) {
       setError("Please enter a valid amount to deposit.")
