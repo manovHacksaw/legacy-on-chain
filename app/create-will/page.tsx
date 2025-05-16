@@ -5,7 +5,6 @@ import { CheckCircle, Shield, Clock, Gift, FileSignature, Users, ArrowRight, Spa
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { cn } from "@/lib/utils";
 
 const CreateWill = () => {
   const cardVariants = {

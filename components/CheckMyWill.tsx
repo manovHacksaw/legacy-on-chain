@@ -5,8 +5,8 @@ import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { useRouter } from "next/navigation"
 import { useSmartWill } from "../context/SmartWillContext"
-import { Loader2, PlusCircle, Clock, Wallet, AlertCircle, User, FileText, Calendar, Coins } from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
+import { Loader2, Clock, Wallet, AlertCircle, User, FileText, Calendar, Coins } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle} from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { motion, AnimatePresence } from "framer-motion"
@@ -135,7 +135,6 @@ const CheckMyWill = () => {
               onClick={() => router.push("/create-will")}
               className="w-full flex items-center justify-center gap-2"
             >
-              <PlusCircle className="w-4 h-4" />
               Create Will
             </Button>
           </CardContent>

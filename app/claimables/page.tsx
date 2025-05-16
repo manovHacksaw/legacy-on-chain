@@ -4,15 +4,12 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useSmartWill } from '@/context/SmartWillContext'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
 import { Alert, AlertDescription } from '@/components/ui/alert'
-import { ScrollText, AlertCircle, Clock, Check, Lock, Loader2, FileText, Coins, User } from 'lucide-react'
+import { AlertCircle, Clock, Check, Loader2, FileText, User } from 'lucide-react'
 import { formatDistanceToNow } from 'date-fns'
-import { isAddress, ethers } from 'ethers'
+import { isAddress } from 'ethers'
 import { DotBackground } from '@/components/animateddots'
 import { motion } from "framer-motion"
-import { AnimatedGradientText } from "@/components/magicui/animated-gradient-text"
-import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text"
 import { cn } from "@/lib/utils"
 
 interface Claimable {

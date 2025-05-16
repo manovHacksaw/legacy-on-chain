@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button'
-import { DotBackground } from '@/components/animateddots'
+
 
 const Page = () => {
   const [hasSimpleWill, setHasSimpleWill] = useState(false)

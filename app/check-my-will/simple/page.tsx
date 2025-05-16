@@ -5,7 +5,7 @@ import { useEffect, useState, useCallback } from "react"
 import { Button } from "@/components/ui/button"
 import { useRouter } from "next/navigation"
 import { useSmartWill } from "@/context/SmartWillContext"
-import { Loader2, PlusCircle, Clock, Wallet, AlertCircle, User, FileText, Calendar, Coins, Shield, History } from "lucide-react"
+import { Loader2,  Wallet, AlertCircle, User, FileText, Calendar, Coins, Shield, History } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Alert, AlertDescription } from "@/components/ui/alert"
@@ -48,6 +48,7 @@ const CheckMyWill = () => {
       checkWithdrawalEligibility(details.creationTime)
     } catch (err) {
       setError("Unable to fetch will details. Please try again.")
+      console.log(err)
       setWillDetails(null)
     } finally {
       setLoading(false)
@@ -150,6 +151,7 @@ const CheckMyWill = () => {
       await fetchWillDetails()
     } catch (err) {
       setError("Failed to confirm activity. Please try again.")
+      console.log(err)
     } finally {
       setIsPinging(false)
     }
@@ -162,6 +164,7 @@ const CheckMyWill = () => {
       await fetchWillDetails()
     } catch (err) {
       setError("Failed to withdraw funds. Please try again.")
+      console.log(err)
     }
   }
 
