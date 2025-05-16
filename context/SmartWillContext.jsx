@@ -9,15 +9,15 @@ const SmartWillContext = createContext()
 
 // EDU Chain Testnet Configuration
 const EDU_CHAIN_CONFIG = {
-  chainId: "0xa045c", // 656476 in hex
-  chainName: "EDU Chain Testnet",
+  chainId: "0x61", // 656476 in hex
+  chainName: "BNB Smart Chain Testnet",
   nativeCurrency: {
-    name: "EDU",
-    symbol: "EDU",
+    name: "tBNB",
+    symbol: "tBNB",
     decimals: 18,
   },
-  rpcUrls: ["wss://open-campus-codex-sepolia.drpc.org"],
-  blockExplorerUrls: ["https://edu-chain-testnet.blockscout.com/"],
+  rpcUrls: ["wss://bsc-testnet-rpc.publicnode.com"],
+  blockExplorerUrls: ["https://testnet.bscscan.com/"],
 }
 
 export function SmartWillProvider({ children }) {
